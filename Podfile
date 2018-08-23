@@ -9,4 +9,5 @@ target 'MotherWeatherNewsIos' do
   pod 'SnapKit'
   pod 'ReactorKit'
   pod 'Alamofire'
+  pod 'RxCocoa'
 end

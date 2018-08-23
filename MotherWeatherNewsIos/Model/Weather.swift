@@ -1,8 +1,8 @@
 import Foundation
 
 struct Result: Codable {
-    let data: Weather
-    let error: String
+    let data: Weather?
+    let error: String?
 }
 
 struct Weather: Codable {

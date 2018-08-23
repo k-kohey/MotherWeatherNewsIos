@@ -1,7 +1,12 @@
 import UIKit
 import SnapKit
 
+import RxSwift
+
 class WeatherViewController: UIViewController {
+    var firstOpen = true
+    var disposeBag: DisposeBag = DisposeBag()
+
     let containerView = UIView()
 
     var backgroundImageView: UIImageView = {
@@ -53,6 +58,13 @@ class WeatherViewController: UIViewController {
         return labels
     }()
 
+    let debugButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(debug), for: .touchUpInside)
+        button.setTitle("debug", for: .normal)
+        return button
+    }()
+    
     var weatherImageView = WeatherImageView()
 
     var chigichanCommentView = ChigichanCommentView()
@@ -72,6 +84,7 @@ class WeatherViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupConstraints()
+        bind()
     }
 
     func setupView() {
@@ -86,6 +99,7 @@ class WeatherViewController: UIViewController {
         }
         containerView.addSubview(weatherImageView)
         view.addSubview(chigichanCommentView)
+        view.addSubview(debugButton)
 
         nameLabel.text = "川口 雅子"
         weatherConditionLabel.text = "ところにより曇り"
@@ -157,6 +171,41 @@ class WeatherViewController: UIViewController {
             $0.left.right.equalToSuperview()
             $0.height.equalTo(Const.chigichanHeight)
         }
+
+        debugButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-30)
+            $0.width.height.equalTo(20)
+        }
+    }
+
+    func bind() {
+        // virtual Action
+        if firstOpen {
+            subscribeAPI()
+            return
+        }
+
+        Observable<Int>.interval(5, scheduler: MainScheduler.instance).subscribe({_ in
+            self.subscribeAPI()
+        }).disposed(by: self.disposeBag)
+    }
+
+    private func subscribeAPI() {
+        API.request(to: .weather).subscribe(
+            onSuccess: { entity in
+                guard let weatherType = entity.data?.type else {return}
+                self.weatherImageView.setImage(type: weatherType)
+                self.firstOpen = false
+                self.closeError()
+        }, onError: { error in
+            print(error)
+            self.showError()
+        }).disposed(by: self.disposeBag)
+    }
+
+    @objc func debug() {
+        // debug
     }
 
     override func didReceiveMemoryWarning() {

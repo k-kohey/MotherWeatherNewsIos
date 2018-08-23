@@ -8,7 +8,6 @@ class WeatherImageView: UIImageView {
 
     convenience init() {
         self.init(image: UIImage())
-        setImage(type: .sunny)
     }
 
     override init(image: UIImage?) {
@@ -18,7 +17,15 @@ class WeatherImageView: UIImageView {
     }
 
     func setImage(type: WeatherType) {
-        image = UIImage(named: "w\(type.rawValue)")
+        let newImage = UIImage(named: "w\(type.rawValue)")
+        toggleAnimate {_ in
+            self.image = newImage
+            self.toggleAnimate(compeltion: { _ in})
+        }
+    }
+
+    func toggleAnimate(compeltion: @escaping (Bool) -> ()) {
+        UIView.animate(withDuration: 0.6, animations: {self.alpha = 1.0 - self.alpha}, completion: compeltion)
     }
 
     required init?(coder aDecoder: NSCoder) {

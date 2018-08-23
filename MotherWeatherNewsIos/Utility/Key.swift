@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 enum WeatherType: Int {
     case sunny

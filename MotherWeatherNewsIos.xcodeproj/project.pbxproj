@@ -12,6 +12,7 @@
 		1B5629B4212E96E10088A649 /* ChigichanCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5629B3212E96E10088A649 /* ChigichanCommentView.swift */; };
 		1B5629B6212EA1F70088A649 /* WeatherImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5629B5212EA1F70088A649 /* WeatherImageView.swift */; };
 		1B5629B9212EB11C0088A649 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5629B8212EB11C0088A649 /* Weather.swift */; };
+		1B5629BB212EC7220088A649 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5629BA212EC7220088A649 /* API.swift */; };
 		1BBA8E63212E6C3000237198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA8E62212E6C3000237198 /* AppDelegate.swift */; };
 		1BBA8E6A212E6C3100237198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA8E69212E6C3100237198 /* Assets.xcassets */; };
 		1BBA8E6D212E6C3100237198 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA8E6B212E6C3100237198 /* LaunchScreen.storyboard */; };
@@ -25,6 +26,7 @@
 		1B5629B3212E96E10088A649 /* ChigichanCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChigichanCommentView.swift; sourceTree = "<group>"; };
 		1B5629B5212EA1F70088A649 /* WeatherImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherImageView.swift; sourceTree = "<group>"; };
 		1B5629B8212EB11C0088A649 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		1B5629BA212EC7220088A649 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1BBA8E5F212E6C3000237198 /* MotherWeatherNewsIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotherWeatherNewsIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BBA8E62212E6C3000237198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BBA8E69212E6C3100237198 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				1B5629B8212EB11C0088A649 /* Weather.swift */,
+				1B5629BA212EC7220088A649 /* API.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MotherWeatherNewsIos/Pods-MotherWeatherNewsIos-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
@@ -234,6 +238,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
@@ -255,6 +260,7 @@
 				1B5629B4212E96E10088A649 /* ChigichanCommentView.swift in Sources */,
 				1BBA8E63212E6C3000237198 /* AppDelegate.swift in Sources */,
 				1B5629AF212E72F60088A649 /* Font.swift in Sources */,
+				1B5629BB212EC7220088A649 /* API.swift in Sources */,
 				1B5629B9212EB11C0088A649 /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
