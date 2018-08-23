@@ -180,21 +180,17 @@ class WeatherViewController: UIViewController {
     }
 
     func bind() {
-        if firstOpen {
-            subscribeAPI()
-        }
-        else {
-            Observable<Int>.interval(60, scheduler: MainScheduler.instance).subscribe({_ in
-                self.subscribeAPI()
-            }).disposed(by: self.disposeBag)
-        }
+        self.subscribeAPI()
+        Observable<Int>.interval(15, scheduler: MainScheduler.instance).subscribe({_ in
+            self.subscribeAPI()
+        }).disposed(by: self.disposeBag)
     }
 
     private func subscribeAPI() {
         API.request(to: .weather).subscribe(
             onSuccess: { entity in
                 guard let weatherType = entity.data?.type else {return}
-                self.weatherImageView.setImage(type: weatherType)
+                self.weatherImageView.type = weatherType
                 self.firstOpen = false
         }, onError: { error in
             print(error)

@@ -1,9 +1,12 @@
 import UIKit
 
 class WeatherImageView: UIImageView {
-    convenience init(type: WeatherType) {
-        let image = UIImage(named: "w\(type.rawValue)")
-        self.init(image: image)
+    var type: WeatherType {
+        willSet {
+            if type != newValue {
+                setImage(type: newValue)
+            }
+        }
     }
 
     convenience init() {
@@ -11,12 +14,13 @@ class WeatherImageView: UIImageView {
     }
 
     override init(image: UIImage?) {
+        type = .sunny
         super.init(image: image)
         contentMode = .scaleAspectFit
         alpha = 0.9
     }
 
-    func setImage(type: WeatherType) {
+    private func setImage(type: WeatherType) {
         let newImage = UIImage(named: "w\(type.rawValue)")
         toggleAnimate {_ in
             self.image = newImage

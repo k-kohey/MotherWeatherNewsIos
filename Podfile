@@ -10,4 +10,5 @@ target 'MotherWeatherNewsIos' do
   pod 'Firebase/Core'
   pod 'Alamofire'
   pod 'RxCocoa'
+  pod 'Firebase/Messaging'
 end

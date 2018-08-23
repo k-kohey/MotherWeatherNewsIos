@@ -1,15 +1,9 @@
-//
-//  AppDelegate.swift
-//  MotherWeatherNewsIos
-//
-//  Created by kawaguchi kohei on 2018/08/23.
-//  Copyright © 2018年 kawaguchi kohei. All rights reserved.
-//
-
 import UIKit
+import Firebase
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
 
     var window: UIWindow?
 
@@ -20,6 +14,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = WeatherViewController()
         self.window?.makeKeyAndVisible()
+
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,
+            completionHandler: {_, _ in })
+        
+        // UNUserNotificationCenterDelegateの設定
+        UNUserNotificationCenter.current().delegate = self
+        // FCMのMessagingDelegateの設定
+        Messaging.messaging().delegate = self
+
+        // リモートプッシュの設定
+        application.registerForRemoteNotifications()
+        // Firebase初期設定
+        FirebaseApp.configure()
+
+        // アプリ起動時にFCMのトークンを取得し、表示する
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
 
         return true
     }
@@ -46,6 +59,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("フロントでプッシュ通知受け取ったよ")
+    }
 
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("フロントでプッシュ通知受け取ったよ")
+    }
+
+
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+    }
+
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+        print("Firebase registration token: \(remoteMessage)")
+    }
 }
 
