@@ -13,6 +13,7 @@
 		1B5629B6212EA1F70088A649 /* WeatherImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5629B5212EA1F70088A649 /* WeatherImageView.swift */; };
 		1B5629B9212EB11C0088A649 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5629B8212EB11C0088A649 /* Weather.swift */; };
 		1B5629BB212EC7220088A649 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5629BA212EC7220088A649 /* API.swift */; };
+		1B5629BF212EFEFC0088A649 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B5629BE212EFEFC0088A649 /* GoogleService-Info.plist */; };
 		1BBA8E63212E6C3000237198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA8E62212E6C3000237198 /* AppDelegate.swift */; };
 		1BBA8E6A212E6C3100237198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA8E69212E6C3100237198 /* Assets.xcassets */; };
 		1BBA8E6D212E6C3100237198 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA8E6B212E6C3100237198 /* LaunchScreen.storyboard */; };
@@ -27,6 +28,7 @@
 		1B5629B5212EA1F70088A649 /* WeatherImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherImageView.swift; sourceTree = "<group>"; };
 		1B5629B8212EB11C0088A649 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		1B5629BA212EC7220088A649 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		1B5629BE212EFEFC0088A649 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1BBA8E5F212E6C3000237198 /* MotherWeatherNewsIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotherWeatherNewsIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BBA8E62212E6C3000237198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BBA8E69212E6C3100237198 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		1BBA8E56212E6C3000237198 = {
 			isa = PBXGroup;
 			children = (
+				1B5629BE212EFEFC0088A649 /* GoogleService-Info.plist */,
 				1BBA8E61212E6C3000237198 /* MotherWeatherNewsIos */,
 				1BBA8E60212E6C3000237198 /* Products */,
 				A543712910EC1A47EE49B4A8 /* Pods */,
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BBA8E6D212E6C3100237198 /* LaunchScreen.storyboard in Resources */,
+				1B5629BF212EFEFC0088A649 /* GoogleService-Info.plist in Resources */,
 				1BBA8E6A212E6C3100237198 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
