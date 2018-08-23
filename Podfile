@@ -6,5 +6,6 @@ target 'MotherWeatherNewsIos' do
   use_frameworks!
 
   # Pods for MotherWeatherNewsIos
+  pod 'SnapKit'
 
 end
