@@ -45,7 +45,7 @@ class WeatherViewController: UIViewController {
 
     var paramLabels: [UILabel] = {
         var labels: [UILabel] = []
-        for _ in Weather.allcases {
+        for _ in WeatherType.allcases {
             let label = UILabel().white().center()
             label.text = "20"
             labels.append(label)
@@ -81,7 +81,7 @@ class WeatherViewController: UIViewController {
         containerView.addSubview(weatherConditionLabel)
         containerView.addSubview(degreeLabel)
         containerView.addSubview(separetorView)
-        for i in Weather.allcases {
+        for i in WeatherType.allcases {
             containerView.addSubview(paramLabels[i.rawValue])
         }
         containerView.addSubview(weatherImageView)

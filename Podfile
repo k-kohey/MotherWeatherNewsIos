@@ -7,5 +7,6 @@ target 'MotherWeatherNewsIos' do
 
   # Pods for MotherWeatherNewsIos
   pod 'SnapKit'
-
+  pod 'ReactorKit'
+  pod 'Alamofire'
 end

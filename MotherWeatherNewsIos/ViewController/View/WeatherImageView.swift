@@ -1,7 +1,7 @@
 import UIKit
 
 class WeatherImageView: UIImageView {
-    convenience init(type: Weather) {
+    convenience init(type: WeatherType) {
         let image = UIImage(named: "w\(type.rawValue)")
         self.init(image: image)
     }
@@ -17,7 +17,7 @@ class WeatherImageView: UIImageView {
         alpha = 0.9
     }
 
-    func setImage(type: Weather) {
+    func setImage(type: WeatherType) {
         image = UIImage(named: "w\(type.rawValue)")
     }
 

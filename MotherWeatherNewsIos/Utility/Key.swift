@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum Weather: Int {
+enum WeatherType: Int {
     case sunny
     case cloudy
     case rainy
     case thunder
 
-    static var allcases: [Weather] {
+    static var allcases: [WeatherType] {
         return [.sunny, cloudy, .rainy, .thunder]
     }
 }
