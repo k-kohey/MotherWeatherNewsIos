@@ -64,7 +64,7 @@ class WeatherViewController: UIViewController {
         button.setTitle("debug", for: .normal)
         return button
     }()
-    
+
     var weatherImageView = WeatherImageView()
 
     var chigichanCommentView = ChigichanCommentView()
@@ -174,21 +174,20 @@ class WeatherViewController: UIViewController {
 
         debugButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview().offset(-30)
-            $0.width.height.equalTo(20)
+            $0.bottom.equalToSuperview().offset(-110)
+            $0.width.height.equalTo(50)
         }
     }
 
     func bind() {
-        // virtual Action
         if firstOpen {
             subscribeAPI()
-            return
         }
-
-        Observable<Int>.interval(5, scheduler: MainScheduler.instance).subscribe({_ in
-            self.subscribeAPI()
-        }).disposed(by: self.disposeBag)
+        else {
+            Observable<Int>.interval(60, scheduler: MainScheduler.instance).subscribe({_ in
+                self.subscribeAPI()
+            }).disposed(by: self.disposeBag)
+        }
     }
 
     private func subscribeAPI() {
@@ -197,10 +196,8 @@ class WeatherViewController: UIViewController {
                 guard let weatherType = entity.data?.type else {return}
                 self.weatherImageView.setImage(type: weatherType)
                 self.firstOpen = false
-                self.closeError()
         }, onError: { error in
             print(error)
-            self.showError()
         }).disposed(by: self.disposeBag)
     }
 
