@@ -1,7 +1,7 @@
 import UIKit
 
 class WeatherImageView: UIImageView {
-    var type: WeatherType {
+    var type: WeatherType = .sunny{
         willSet {
             if type != newValue {
                 setImage(type: newValue)
@@ -14,8 +14,7 @@ class WeatherImageView: UIImageView {
     }
 
     override init(image: UIImage?) {
-        type = .sunny
-        super.init(image: image)
+        super.init(image: UIImage(named:"w\(0)"))
         contentMode = .scaleAspectFit
         alpha = 0.9
     }
@@ -29,7 +28,7 @@ class WeatherImageView: UIImageView {
     }
 
     func toggleAnimate(compeltion: @escaping (Bool) -> ()) {
-        UIView.animate(withDuration: 0.6, animations: {self.alpha = 1.0 - self.alpha}, completion: compeltion)
+        UIView.animate(withDuration: 0.4, animations: {self.alpha = 1.0 - self.alpha}, completion: compeltion)
     }
 
     required init?(coder aDecoder: NSCoder) {

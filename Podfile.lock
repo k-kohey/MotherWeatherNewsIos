@@ -49,6 +49,7 @@ PODS:
   - "GoogleUtilities/NSData+zlib (5.2.2)"
   - GoogleUtilities/Reachability (5.2.2):
     - GoogleUtilities/Logger
+  - LTMorphingLabel (0.5.7)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -64,6 +65,7 @@ DEPENDENCIES:
   - Alamofire
   - Firebase/Core
   - Firebase/Messaging
+  - LTMorphingLabel
   - RxCocoa
   - SnapKit
 
@@ -77,6 +79,7 @@ SPEC REPOS:
     - FirebaseMessaging
     - GoogleAppMeasurement
     - GoogleUtilities
+    - LTMorphingLabel
     - nanopb
     - Protobuf
     - RxCocoa
@@ -92,12 +95,13 @@ SPEC CHECKSUMS:
   FirebaseMessaging: f67b3719f520ee200da0e20ce577fe2bce0c01d0
   GoogleAppMeasurement: e785bdb86d3d280abc778156cec323a975f11d1d
   GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
+  LTMorphingLabel: 9d1c38bd602fe505f264d3e9fdb780995142f275
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 407a4ec6e08ea27cf632508393196bd121275146
+PODFILE CHECKSUM: a557fd3d433a7a57186908e617e1630eee114950
 
 COCOAPODS: 1.5.3

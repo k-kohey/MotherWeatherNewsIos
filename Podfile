@@ -11,4 +11,5 @@ target 'MotherWeatherNewsIos' do
   pod 'Alamofire'
   pod 'RxCocoa'
   pod 'Firebase/Messaging'
+  pod 'LTMorphingLabel'
 end

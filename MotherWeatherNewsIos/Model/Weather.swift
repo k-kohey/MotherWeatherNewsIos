@@ -7,6 +7,8 @@ struct Result: Codable {
 
 struct Weather: Codable {
     let weather: Int
+    let temperature: Int
+    let weather_rates: [Int]
 
     var type: WeatherType? {
         return WeatherType(rawValue: self.weather)

@@ -12,7 +12,7 @@ class ChigichanCommentView: UIView {
         let label = UILabel().white()
         label.numberOfLines = -1
         label.font = Font.plainFont(of: .plain)
-        label.text = "絶好調でやんす!!!!!!!!!!!!!!!!"
+        label.text = "周りに気を配れ．嵐が，来る．テンペスト．．．．．．．．"
         label.textAlignment = .center
         return label
     }()

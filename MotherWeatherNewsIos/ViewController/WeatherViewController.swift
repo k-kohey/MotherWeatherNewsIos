@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import LTMorphingLabel
 
 import RxSwift
 
@@ -29,8 +30,11 @@ class WeatherViewController: UIViewController {
         return label
     }()
 
-    var degreeLabel: UILabel = {
-        let label = UILabel().center().white()
+    var degreeLabel: LTMorphingLabel = {
+        let label = LTMorphingLabel()
+        label.textColor = .white
+        label.textAlignment = .center
+        label.morphingEffect = .pixelate
         label.font = Font.englishFont(of: .impact)
         return label
     }()
@@ -48,11 +52,14 @@ class WeatherViewController: UIViewController {
         return view
     }()
 
-    var paramLabels: [UILabel] = {
-        var labels: [UILabel] = []
+    var paramLabels: [LTMorphingLabel] = {
+        var labels: [LTMorphingLabel] = []
         for _ in WeatherType.allcases {
-            let label = UILabel().white().center()
-            label.text = "20"
+            let label = LTMorphingLabel()
+            label.textColor = .white
+            label.textAlignment = .center
+            label.text = "0"
+            label.morphingEffect = .pixelate
             labels.append(label)
         }
         return labels
@@ -61,7 +68,7 @@ class WeatherViewController: UIViewController {
     let debugButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(debug), for: .touchUpInside)
-        button.setTitle("debug", for: .normal)
+        //button.setTitle("debug", for: .normal)
         return button
     }()
 
@@ -152,7 +159,7 @@ class WeatherViewController: UIViewController {
         }
 
         separetorView.snp.makeConstraints {
-            $0.top.equalTo(degreeLabel.snp.bottom).offset(Const.bigContentMargin)
+            $0.top.equalTo(degreeLabel.snp.bottom).offset(Const.smallConntentMargin)
             $0.centerX.equalToSuperview()
             $0.leading.equalTo(paramLabels[0])
             $0.trailing.equalTo(paramLabels[3])
@@ -162,8 +169,8 @@ class WeatherViewController: UIViewController {
         weatherImageView.snp.makeConstraints {
             $0.centerY.equalToSuperview().offset(Const.bigContentMargin)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(separetorView).dividedBy(1.2)
-            $0.height.equalTo(separetorView.snp.width).dividedBy(1.2)
+            $0.width.equalTo(separetorView).dividedBy(1.4)
+            $0.height.equalTo(separetorView.snp.width).dividedBy(1.4)
         }
 
         chigichanCommentView.snp.makeConstraints {
@@ -181,7 +188,7 @@ class WeatherViewController: UIViewController {
 
     func bind() {
         self.subscribeAPI()
-        Observable<Int>.interval(15, scheduler: MainScheduler.instance).subscribe({_ in
+        Observable<Int>.interval(10, scheduler: MainScheduler.instance).subscribe({_ in
             self.subscribeAPI()
         }).disposed(by: self.disposeBag)
     }
@@ -189,8 +196,12 @@ class WeatherViewController: UIViewController {
     private func subscribeAPI() {
         API.request(to: .weather).subscribe(
             onSuccess: { entity in
-                guard let weatherType = entity.data?.type else {return}
-                self.weatherImageView.type = weatherType
+                guard let data = entity.data else {return}
+                self.weatherImageView.type = data.type ?? .sunny
+                self.degreeLabel.text = "\(data.temperature)°"
+                for (i, label) in self.paramLabels.enumerated() {
+                    label.text = "\(data.weather_rates[i])"
+                }
                 self.firstOpen = false
         }, onError: { error in
             print(error)
