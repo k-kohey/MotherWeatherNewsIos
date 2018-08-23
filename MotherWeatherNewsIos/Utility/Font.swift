@@ -1,22 +1,22 @@
 import UIKit
 
 class Font {
-    enum Size: CGFloat {
+    enum FontSize: CGFloat {
         case plain = 14.0
         case middle = 16.0
         case big = 24.0
         case impact = 82.0
     }
-
-    func plainFont(of size: Size) -> UIFont {
+    
+    static func plainFont(of size: FontSize) -> UIFont {
         return UIFont.systemFont(ofSize: size.rawValue, weight: .regular)
     }
 
-    func englishFont(of size: Size) -> UIFont {
+    static func englishFont(of size: FontSize) -> UIFont {
         return UIFont(name: "Helvetica", size: size.rawValue)!
     }
 
-    func boldFont(of size: Size) -> UIFont {
+    static func boldFont(of size: FontSize) -> UIFont {
         return UIFont.systemFont(ofSize: size.rawValue, weight: .bold)
     }
 }
