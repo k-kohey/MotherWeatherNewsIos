@@ -43,7 +43,7 @@ class ChigichanCommentView: UIView {
         backgroundView.backgroundColor = .black
         backgroundView.alpha = 0.3
         backgroundView.layer.masksToBounds = true
-        layer.cornerRadius = 5.0
+        //layer.cornerRadius = 5.0
         layer.masksToBounds = true
 
         addSubview(backgroundView)
