@@ -199,7 +199,7 @@ class WeatherViewController: UIViewController {
                     label.text = "\(data.weather_rates[i])"
                 }
                 self.weatherConditionLabel.text = data.condition
-                self.chigichanCommentView.discriptionLabel.text = data.advice
+                self.chigichanCommentView.discriptionLabel.text = data.adivice
         }, onError: { error in
             print(error)
         }).disposed(by: self.disposeBag)

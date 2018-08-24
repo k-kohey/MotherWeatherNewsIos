@@ -10,7 +10,7 @@ struct Weather: Codable {
     let temperature: Int
     let weather_rates: [Int]
     let condition: String
-    let advice: String
+    let adivice: String
 
     var type: WeatherType? {
         return WeatherType(rawValue: self.weather)
