@@ -198,13 +198,11 @@ class WeatherViewController: UIViewController {
                 for (i, label) in self.paramLabels.enumerated() {
                     label.text = "\(data.weather_rates[i])"
                 }
+                self.weatherConditionLabel.text = data.condition
+                self.chigichanCommentView.discriptionLabel.text = data.advice
         }, onError: { error in
             print(error)
         }).disposed(by: self.disposeBag)
-    }
-
-    @objc func debug() {
-        // debug
     }
 
     override func didReceiveMemoryWarning() {
