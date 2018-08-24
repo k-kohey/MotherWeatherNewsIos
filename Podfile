@@ -12,4 +12,5 @@ target 'MotherWeatherNewsIos' do
   pod 'RxCocoa'
   pod 'Firebase/Messaging'
   pod 'LTMorphingLabel'
+  pod 'SwiftyGif'
 end

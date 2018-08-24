@@ -1,6 +1,7 @@
 import UIKit
 import SnapKit
 import LTMorphingLabel
+import SwiftyGif
 
 import RxSwift
 
@@ -11,10 +12,9 @@ class WeatherViewController: UIViewController {
     let containerView = UIView()
 
     var backgroundImageView: UIImageView = {
-        let image = UIImage(named: "background")
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleAspectFit
-        return imageView
+        let gif = UIImage(gifName: "b1.gif")
+        let imageview = UIImageView(gifImage: gif, loopCount: -1)
+        return imageview
     }()
 
     var nameLabel: UILabel = {
@@ -65,13 +65,6 @@ class WeatherViewController: UIViewController {
         return labels
     }()
 
-    let debugButton: UIButton = {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(debug), for: .touchUpInside)
-        //button.setTitle("debug", for: .normal)
-        return button
-    }()
-
     var weatherImageView = WeatherImageView()
 
     var chigichanCommentView = ChigichanCommentView()
@@ -85,6 +78,14 @@ class WeatherViewController: UIViewController {
         static let separetorLength = 125.0
         static let paramsMargin = 35.0
         static let chigichanHeight = 100.0
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
@@ -106,9 +107,8 @@ class WeatherViewController: UIViewController {
         }
         containerView.addSubview(weatherImageView)
         view.addSubview(chigichanCommentView)
-        view.addSubview(debugButton)
 
-        nameLabel.text = "川口 雅子"
+        nameLabel.text = "MOTHER"
         weatherConditionLabel.text = "ところにより曇り"
         degreeLabel.text = "24°"
     }
@@ -178,12 +178,6 @@ class WeatherViewController: UIViewController {
             $0.left.right.equalToSuperview()
             $0.height.equalTo(Const.chigichanHeight)
         }
-
-        debugButton.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview().offset(-110)
-            $0.width.height.equalTo(50)
-        }
     }
 
     func bind() {
@@ -199,10 +193,11 @@ class WeatherViewController: UIViewController {
                 guard let data = entity.data else {return}
                 self.weatherImageView.type = data.type ?? .sunny
                 self.degreeLabel.text = "\(data.temperature)°"
+                let gif = UIImage(gifName: "b\(data.type?.rawValue ?? 0).gif")
+                self.backgroundImageView.gifImage = gif
                 for (i, label) in self.paramLabels.enumerated() {
                     label.text = "\(data.weather_rates[i])"
                 }
-                self.firstOpen = false
         }, onError: { error in
             print(error)
         }).disposed(by: self.disposeBag)

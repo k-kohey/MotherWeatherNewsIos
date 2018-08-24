@@ -14,6 +14,10 @@
 		1B5629B9212EB11C0088A649 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5629B8212EB11C0088A649 /* Weather.swift */; };
 		1B5629BB212EC7220088A649 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5629BA212EC7220088A649 /* API.swift */; };
 		1B5629BF212EFEFC0088A649 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B5629BE212EFEFC0088A649 /* GoogleService-Info.plist */; };
+		1BA33E8C212FCF420024FEE6 /* b1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1BA33E88212FCF400024FEE6 /* b1.gif */; };
+		1BA33E8D212FCF420024FEE6 /* b2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1BA33E89212FCF410024FEE6 /* b2.gif */; };
+		1BA33E8E212FCF420024FEE6 /* b0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1BA33E8A212FCF410024FEE6 /* b0.gif */; };
+		1BA33E8F212FCF420024FEE6 /* b3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1BA33E8B212FCF420024FEE6 /* b3.gif */; };
 		1BBA8E63212E6C3000237198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA8E62212E6C3000237198 /* AppDelegate.swift */; };
 		1BBA8E6A212E6C3100237198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA8E69212E6C3100237198 /* Assets.xcassets */; };
 		1BBA8E6D212E6C3100237198 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA8E6B212E6C3100237198 /* LaunchScreen.storyboard */; };
@@ -30,6 +34,10 @@
 		1B5629BA212EC7220088A649 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1B5629BE212EFEFC0088A649 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B5629C0212F257D0088A649 /* MotherWeatherNewsIos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MotherWeatherNewsIos.entitlements; sourceTree = "<group>"; };
+		1BA33E88212FCF400024FEE6 /* b1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = b1.gif; sourceTree = "<group>"; };
+		1BA33E89212FCF410024FEE6 /* b2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = b2.gif; sourceTree = "<group>"; };
+		1BA33E8A212FCF410024FEE6 /* b0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = b0.gif; sourceTree = "<group>"; };
+		1BA33E8B212FCF420024FEE6 /* b3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = b3.gif; sourceTree = "<group>"; };
 		1BBA8E5F212E6C3000237198 /* MotherWeatherNewsIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotherWeatherNewsIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BBA8E62212E6C3000237198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BBA8E69212E6C3100237198 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,9 +88,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1B5629C9212FCBC30088A649 /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				1BA33E8A212FCF410024FEE6 /* b0.gif */,
+				1BA33E88212FCF400024FEE6 /* b1.gif */,
+				1BA33E89212FCF410024FEE6 /* b2.gif */,
+				1BA33E8B212FCF420024FEE6 /* b3.gif */,
+			);
+			path = Res;
+			sourceTree = "<group>";
+		};
 		1BBA8E56212E6C3000237198 = {
 			isa = PBXGroup;
 			children = (
+				1B5629C9212FCBC30088A649 /* Res */,
 				1B5629BE212EFEFC0088A649 /* GoogleService-Info.plist */,
 				1BBA8E61212E6C3000237198 /* MotherWeatherNewsIos */,
 				1BBA8E60212E6C3000237198 /* Products */,
@@ -208,7 +228,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BA33E8D212FCF420024FEE6 /* b2.gif in Resources */,
+				1BA33E8F212FCF420024FEE6 /* b3.gif in Resources */,
 				1BBA8E6D212E6C3100237198 /* LaunchScreen.storyboard in Resources */,
+				1BA33E8E212FCF420024FEE6 /* b0.gif in Resources */,
+				1BA33E8C212FCF420024FEE6 /* b1.gif in Resources */,
 				1B5629BF212EFEFC0088A649 /* GoogleService-Info.plist in Resources */,
 				1BBA8E6A212E6C3100237198 /* Assets.xcassets in Resources */,
 			);
@@ -249,6 +273,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -260,6 +285,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
