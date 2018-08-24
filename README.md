@@ -1,5 +1,5 @@
 # Demo
-![result](https://github.com/k-kohey/MotherWeatherNewsIos/demo.gif)
+![result](https://github.com/k-kohey/MotherWeatherNewsIos/blob/master/demo.gif)
 
 # About
 母親の機嫌をNEWSで教えてくれるアプリのクライアントです．
