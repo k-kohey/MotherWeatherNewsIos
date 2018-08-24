@@ -16,8 +16,8 @@
 		1B5629BF212EFEFC0088A649 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B5629BE212EFEFC0088A649 /* GoogleService-Info.plist */; };
 		1BA33E8C212FCF420024FEE6 /* b1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1BA33E88212FCF400024FEE6 /* b1.gif */; };
 		1BA33E8D212FCF420024FEE6 /* b2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1BA33E89212FCF410024FEE6 /* b2.gif */; };
-		1BA33E8E212FCF420024FEE6 /* b0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1BA33E8A212FCF410024FEE6 /* b0.gif */; };
 		1BA33E8F212FCF420024FEE6 /* b3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1BA33E8B212FCF420024FEE6 /* b3.gif */; };
+		1BA33E91212FD6650024FEE6 /* b0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1BA33E90212FD6650024FEE6 /* b0.gif */; };
 		1BBA8E63212E6C3000237198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBA8E62212E6C3000237198 /* AppDelegate.swift */; };
 		1BBA8E6A212E6C3100237198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA8E69212E6C3100237198 /* Assets.xcassets */; };
 		1BBA8E6D212E6C3100237198 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BBA8E6B212E6C3100237198 /* LaunchScreen.storyboard */; };
@@ -36,8 +36,8 @@
 		1B5629C0212F257D0088A649 /* MotherWeatherNewsIos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MotherWeatherNewsIos.entitlements; sourceTree = "<group>"; };
 		1BA33E88212FCF400024FEE6 /* b1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = b1.gif; sourceTree = "<group>"; };
 		1BA33E89212FCF410024FEE6 /* b2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = b2.gif; sourceTree = "<group>"; };
-		1BA33E8A212FCF410024FEE6 /* b0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = b0.gif; sourceTree = "<group>"; };
 		1BA33E8B212FCF420024FEE6 /* b3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = b3.gif; sourceTree = "<group>"; };
+		1BA33E90212FD6650024FEE6 /* b0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = b0.gif; sourceTree = "<group>"; };
 		1BBA8E5F212E6C3000237198 /* MotherWeatherNewsIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotherWeatherNewsIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BBA8E62212E6C3000237198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BBA8E69212E6C3100237198 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		1B5629C9212FCBC30088A649 /* Res */ = {
 			isa = PBXGroup;
 			children = (
-				1BA33E8A212FCF410024FEE6 /* b0.gif */,
+				1BA33E90212FD6650024FEE6 /* b0.gif */,
 				1BA33E88212FCF400024FEE6 /* b1.gif */,
 				1BA33E89212FCF410024FEE6 /* b2.gif */,
 				1BA33E8B212FCF420024FEE6 /* b3.gif */,
@@ -231,7 +231,7 @@
 				1BA33E8D212FCF420024FEE6 /* b2.gif in Resources */,
 				1BA33E8F212FCF420024FEE6 /* b3.gif in Resources */,
 				1BBA8E6D212E6C3100237198 /* LaunchScreen.storyboard in Resources */,
-				1BA33E8E212FCF420024FEE6 /* b0.gif in Resources */,
+				1BA33E91212FD6650024FEE6 /* b0.gif in Resources */,
 				1BA33E8C212FCF420024FEE6 /* b1.gif in Resources */,
 				1B5629BF212EFEFC0088A649 /* GoogleService-Info.plist in Resources */,
 				1BBA8E6A212E6C3100237198 /* Assets.xcassets in Resources */,
